@@ -7,13 +7,19 @@ slug: refunds
 
 **Effective date:** {{effectiveDate}} · **Version:** {{policyVersion}}
 
-## The app
+## The app and {{pricing.proName}}
 
 {{pricing.summary}}
 
-Because the app is currently free, there is nothing to refund. If we ever introduce a paid feature, this policy will apply to it, and the price will always be shown clearly before you buy.
+{{pricing.proName}} is sold only through the Apple App Store and Google Play, so Apple and Google take the payment and decide refunds under their own policies. We cannot issue refunds for store purchases ourselves, and we never charge a fee for a refund.
 
-## Purchases made through the App Store or Google Play
+## Cancelling a subscription
+
+You can cancel at any time in your App Store or Google Play account settings, or from **Settings → {{pricing.proName}} → Manage subscription** in the app. Cancelling stops the next renewal; you keep Pro until the end of the period already paid for. Cancelling does not by itself refund the current period; to ask for a refund, use the store links below.
+
+If you are a consumer in the UK or EU, you may have a legal right to cancel a new subscription within 14 days. Apple and Google handle these requests through the links below.
+
+## Requesting a refund for a store purchase
 
 Apple and Google process payments for purchases made in their stores, so refunds for those purchases are handled by them under their own policies:
 

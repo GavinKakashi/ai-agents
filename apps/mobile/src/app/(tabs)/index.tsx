@@ -8,9 +8,12 @@ import { useTheme } from '@/hooks/use-theme';
 import { formatCost, formatTokens } from '@/lib/format';
 import { estimateCost, getModel } from '@/lib/models';
 import { useApp } from '@/state/app-store';
+import { FREE_AGENT_LIMIT, useSubscription } from '@/state/subscription';
 
 export default function AgentsScreen() {
   const { agents, conversations, hasApiKey } = useApp();
+  const { isPro } = useSubscription();
+  const canAddAgent = isPro || agents.length < FREE_AGENT_LIMIT;
   const theme = useTheme();
   const [query, setQuery] = useState('');
 
@@ -50,7 +53,21 @@ export default function AgentsScreen() {
         <Stat label="Est. cost" value={formatCost(totals.cost)} />
       </View>
 
-      <Button label="New agent" icon="add" onPress={() => router.push('/agent/new')} />
+      <Button
+        label="New agent"
+        icon="add"
+        onPress={() => router.push(canAddAgent ? '/agent/new' : { pathname: '/subscribe', params: { reason: 'agents' } })}
+        accessibilityHint={canAddAgent ? undefined : `The free plan includes ${FREE_AGENT_LIMIT} agents. Opens subscription options.`}
+      />
+      <Pressable
+        onPress={() => router.push('/subscribe')}
+        accessibilityRole="button"
+        accessibilityLabel={isPro ? 'Plan: Pro. Opens subscription details' : `Plan: Free, ${agents.length} of ${FREE_AGENT_LIMIT} agents used. Opens subscription options`}
+        style={styles.planChip}>
+        <AppText variant="caption" color="primary">
+          {isPro ? 'Pro plan · unlimited agents' : `Free plan · ${Math.min(agents.length, FREE_AGENT_LIMIT)} of ${FREE_AGENT_LIMIT} agents · See Pro`}
+        </AppText>
+      </Pressable>
 
       {agents.length === 0 ? (
         <EmptyState
@@ -118,5 +135,6 @@ const styles = StyleSheet.create({
   stats: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.sm },
   stat: { flexGrow: 1, flexBasis: '45%', padding: Spacing.md },
   list: { gap: Spacing.sm },
+  planChip: { minHeight: 44, justifyContent: 'center', alignSelf: 'center', paddingHorizontal: Spacing.sm },
   agentCard: { flexDirection: 'row', alignItems: 'center', gap: Spacing.md, padding: Spacing.md, borderRadius: Radius.lg, minHeight: 72 },
 });

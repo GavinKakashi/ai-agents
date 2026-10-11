@@ -28,9 +28,13 @@ What the app does, for you to map onto the current questionnaires:
 
 **Judgement call:** both stores define "collection" and "sharing" in their own ways, and they change their guidance over time. Whether user-directed transfers to the user's own AI provider must be declared (for example as "User content → Other user content" under App functionality) is something you should check against the current Apple and Google definitions when you submit. If in doubt, declare it: over-disclosure is safer than under-disclosure.
 
+## Subscriptions
+
+Set up the products first (`docs/SUBSCRIPTIONS.md`). For review, attach a paywall screenshot to each subscription, link the Terms (EULA) and Privacy Policy in the app's metadata, and submit the subscriptions together with the app version. Purchases are processed by Apple and Google. The app doesn't send purchase data anywhere else. Whether this affects the privacy label (e.g. "Purchases") is another judgement call to check against Apple's and Google's current definitions.
+
 ## Review notes for Apple
 
-Reviewers need an Anthropic API key to test agent replies. Provide a key with a low spending limit in the App Review notes, and revoke it after review.
+Reviewers need an Anthropic API key to test agent replies, and a sandbox account to test the subscription (Apple supplies its own). Provide a key with a low spending limit in the App Review notes, and revoke it after review.
 
 ## Age rating
 

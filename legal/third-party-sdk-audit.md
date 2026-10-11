@@ -14,7 +14,8 @@ This is every third-party software package that {{appName}} ships with directly,
 - **Analytics, advertising, attribution or tracking SDKs:** none.
 - **Crash reporting or session recording SDKs:** none.
 - **Social login or social sharing SDKs:** none.
-- **Network connections made by the app:** only to `api.anthropic.com`, and only when you verify your API key or run an agent.
+- **Payments:** handled by Apple (App Store) and Google (Google Play) through `expo-iap`. No third-party payment or subscription-analytics service is used.
+- **Network connections made by the app:** to `api.anthropic.com` when you verify your API key or run an agent, and to the App Store or Google Play through the operating system to check or buy a subscription.
 
 ## Mobile app — direct dependencies
 
@@ -22,6 +23,7 @@ This is every third-party software package that {{appName}} ships with directly,
 |---|---|---|---|
 | @anthropic-ai/sdk (Anthropic) | Sends your messages to Claude using your API key | No; sends only what you submit, to Anthropic | `api.anthropic.com`, only when you act |
 | expo, expo-router, expo-constants, expo-linking, expo-font, expo-splash-screen, expo-status-bar, expo-system-ui (Expo) | App framework, navigation, app version, opening links, splash screen | No | None at runtime |
+| expo-iap (open source, MIT) | Shows subscription prices and lets you buy, restore and manage {{pricing.proName}} through StoreKit (Apple) and Play Billing (Google) | No; the purchase is handled by Apple or Google | App Store / Google Play, through the operating system |
 | expo-secure-store (Expo) | Stores your API key in the iOS Keychain / Android Keystore | No | None |
 | @react-native-async-storage/async-storage | Stores agents, conversations and settings on your device | No | None |
 | @expo/vector-icons | Icons (Ionicons, MIT licence), bundled in the app | No | None |

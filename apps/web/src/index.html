@@ -40,11 +40,20 @@ description: Crewdeck is a private, local-first mobile app for creating and runn
 
 <section id="pricing" aria-labelledby="pricing-title">
   <h2 id="pricing-title">Pricing</h2>
-  <div class="card">
-    <p class="price">{{pricing.appPrice}}</p>
-    <p>{{pricing.summary}}</p>
-    <p>See <a href="/refunds.html">our Refund Policy</a>.</p>
-  </div>
+  <ul class="feature-grid">
+    <li class="card">
+      <h3>Free</h3>
+      <p class="price">$0</p>
+      <p>Up to {{pricing.freeAgentLimit}} agents, every model, usage tracking and all privacy tools. No time limit.</p>
+    </li>
+    <li class="card">
+      <h3>{{pricing.proName}}</h3>
+      <p class="price-sub">{{pricing.referencePrices}}</p>
+      <p>Unlimited agents and the Pro template library. Auto-renews until you cancel; cancel any time in your App Store or Google Play settings.</p>
+    </li>
+  </ul>
+  <p>{{pricing.summary}}</p>
+  <p>See our <a href="/terms.html">Terms</a> and <a href="/refunds.html">Refund Policy</a>.</p>
 </section>
 
 <section id="updates" aria-labelledby="updates-title">

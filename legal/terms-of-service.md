@@ -19,11 +19,21 @@ Nothing in these terms limits rights you have under consumer protection law that
 
 You must be at least {{minimumAge}} years old, or the age of majority where you live if that is higher, to use {{appName}}.
 
-## 3. Price and fees
+## 3. Price, subscriptions and fees
 
 {{pricing.summary}}
 
-We will never charge you without telling you the price clearly first and getting your explicit agreement. If we introduce a paid feature, it will be optional, its price will be shown before purchase, and existing free features will not be removed without reasonable notice.
+**{{pricing.proName}} subscription.** {{pricing.proName}} is an optional, auto-renewing subscription sold through the Apple App Store and Google Play. The current reference prices are {{pricing.referencePrices}}.
+
+- **Before you buy:** the app shows the price, the billing period and what the subscription includes. We never charge you without your explicit confirmation in the store's purchase sheet.
+- **Payment:** Apple or Google charges your store account when you confirm, and processes all payments. We never see your card details.
+- **Automatic renewal:** the subscription renews automatically for the same period, at the price then in effect, unless you cancel at least 24 hours before the end of the current period. Apple or Google will notify you of any price increase as their rules require, and where required will ask for your consent.
+- **Cancelling:** you can cancel at any time in your App Store or Google Play account settings, or from **Settings → {{pricing.proName}} → Manage subscription** in the app. Cancelling stops future renewals; you keep Pro until the end of the period you have paid for. There is no cancellation fee.
+- **Free plan:** if your subscription ends, you return to the free plan. Agents you created stay on your device and keep working; you won't be able to add agents beyond the free limit until you subscribe again.
+- **Restoring:** use **Restore purchases** to re-activate a subscription on a new device signed in to the same store account.
+- **Refunds** are covered by our Refund Policy.
+
+There are no other fees from us. AI usage is billed separately by Anthropic to your own Anthropic account and is not included in the subscription.
 
 ## 4. Your Anthropic account and API key
 
@@ -74,16 +84,20 @@ We do not exclude or limit liability for death or personal injury caused by our 
 
 ## 12. Ending these terms
 
-You can stop using the app at any time by uninstalling it. We may suspend or end your licence if you seriously or repeatedly break these terms. Sections 5, 7, 10, 11 and 14 continue after these terms end.
+You can stop using the app at any time by uninstalling it. We may suspend or end your licence if you seriously or repeatedly break these terms. Sections 5, 7, 10, 11 and 15 continue after these terms end.
 
-## 13. Changes to these terms
+## 13. Transfer of the service
+
+We may transfer our rights and obligations under these terms to another organisation, for example if we sell the {{appName}} business. If we do, we will tell you, and your rights under these terms and any active subscription will not be reduced as a result. If you are unhappy with the transfer you can cancel your subscription and stop using the app.
+
+## 14. Changes to these terms
 
 If we make a material change, we will update the version and effective date and ask you to review and accept the new terms in the app before you continue using it. If you do not accept them, you can stop using the app.
 
-## 14. Law and disputes
+## 15. Law and disputes
 
 These terms are governed by {{governingLaw}}, and disputes will be heard by {{jurisdictionCourts}}. If you are a consumer, you also benefit from any mandatory protections of the law of the country where you live, and you may bring proceedings in your local courts.
 
-## 15. Contact
+## 16. Contact
 
 {{legalEntityName}} · {{registeredAddress}} · {{supportEmail}}

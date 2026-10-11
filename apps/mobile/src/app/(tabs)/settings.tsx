@@ -6,9 +6,11 @@ import { AppText, Divider, ListRow, Screen, Section, Segmented } from '@/compone
 import { BUSINESS } from '@/legal/generated';
 import type { ThemePreference } from '@/lib/types';
 import { useApp } from '@/state/app-store';
+import { useSubscription } from '@/state/subscription';
 
 export default function SettingsScreen() {
   const { hasApiKey, settings, updateSettings } = useApp();
+  const { isPro } = useSubscription();
 
   return (
     <Screen>
@@ -18,6 +20,16 @@ export default function SettingsScreen() {
           title="Anthropic API key"
           value={hasApiKey ? 'Connected' : 'Not set'}
           onPress={() => router.push('/settings/api-key')}
+        />
+      </Section>
+
+      <Section title="Subscription">
+        <ListRow
+          icon="star-outline"
+          title={BUSINESS.pricing.proName}
+          value={isPro ? 'Active' : 'Free plan'}
+          subtitle="Plans, restore purchases, manage or cancel"
+          onPress={() => router.push('/subscribe')}
         />
       </Section>
 

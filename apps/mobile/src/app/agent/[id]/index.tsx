@@ -7,10 +7,12 @@ import { confirmAction } from '@/lib/confirm';
 import { formatDate, formatDateTime } from '@/lib/format';
 import { getModel } from '@/lib/models';
 import { useApp } from '@/state/app-store';
+import { FREE_AGENT_LIMIT, useSubscription } from '@/state/subscription';
 
 export default function AgentDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { agents, conversations, updateAgent, duplicateAgent, deleteAgent, startConversation } = useApp();
+  const { isPro } = useSubscription();
   const agent = agents.find((a) => a.id === id);
 
   if (!agent) {
@@ -93,6 +95,10 @@ export default function AgentDetail() {
           icon="copy-outline"
           style={styles.flex}
           onPress={async () => {
+            if (!isPro && agents.length >= FREE_AGENT_LIMIT) {
+              router.push({ pathname: '/subscribe', params: { reason: 'agents' } });
+              return;
+            }
             const copy = await duplicateAgent(agent.id);
             if (copy) router.replace({ pathname: '/agent/[id]', params: { id: copy.id } });
           }}

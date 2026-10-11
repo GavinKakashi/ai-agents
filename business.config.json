@@ -17,10 +17,18 @@
   "hostingProvider": "Replit, Inc. (website and privacy-request service hosting)",
   "emailProvider": "[YOUR EMAIL DELIVERY PROVIDER, e.g. your SMTP host]",
   "pricing": {
-    "appPrice": "Free",
-    "summary": "Crewdeck is free to download and use. There are no subscriptions, in-app purchases, ads, or hidden fees. You pay your AI provider (Anthropic) directly for API usage, at the rates they publish."
+    "appPrice": "Free, with an optional Crewdeck Pro subscription",
+    "summary": "Crewdeck is free to download and use with up to 3 agents. Crewdeck Pro is an optional auto-renewing subscription that unlocks unlimited agents and the Pro template library. There are no ads and no hidden fees. Separately, you pay your AI provider (Anthropic) directly for API usage, at the rates they publish.",
+    "proName": "Crewdeck Pro",
+    "referencePrices": "US$4.99 per month or US$39.99 per year (prices in other countries are set by the App Store and Google Play and shown in the app before you buy)",
+    "freeAgentLimit": 3,
+    "productIds": {
+      "monthly": "[com.yourcompany.crewdeck].pro.monthly",
+      "yearly": "[com.yourcompany.crewdeck].pro.yearly"
+    }
   },
-  "policyVersion": "1.0.0",
+  "policyVersion": "1.1.0",
   "effectiveDate": "2026-10-11",
-  "minimumAge": 18
+  "minimumAge": 18,
+  "$transferNote": "When the business is sold, the buyer replaces every legal/business field here (see docs/ownership-transfer). Keep productIds and the app bundle IDs unchanged so existing subscribers keep their subscriptions."
 }

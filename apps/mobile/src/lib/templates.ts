@@ -1,7 +1,10 @@
 import { DEFAULT_MODEL } from './models';
 import type { Agent } from './types';
 
-export type AgentTemplate = Pick<Agent, 'name' | 'description' | 'systemPrompt' | 'model' | 'effort' | 'maxTokens'>;
+export type AgentTemplate = Pick<Agent, 'name' | 'description' | 'systemPrompt' | 'model' | 'effort' | 'maxTokens'> & {
+  /** Part of the Crewdeck Pro template library. */
+  pro?: boolean;
+};
 
 export const BLANK_TEMPLATE: AgentTemplate = {
   name: '',
@@ -48,5 +51,45 @@ export const TEMPLATES: AgentTemplate[] = [
     model: 'claude-haiku-5-5',
     effort: 'low',
     maxTokens: 4000,
+  },
+  {
+    name: 'Customer support replier',
+    description: 'Drafts friendly, accurate replies to customer messages.',
+    systemPrompt:
+      'You draft replies to customer messages for a small business. Be warm, concise and specific. Never promise refunds, discounts or timelines unless the user tells you they are allowed. End with a clear next step.',
+    model: 'claude-sonnet-5-5',
+    effort: 'medium',
+    maxTokens: 4000,
+    pro: true,
+  },
+  {
+    name: 'Social post writer',
+    description: 'Turns an idea into posts for different platforms.',
+    systemPrompt:
+      'Write social media posts from the idea provided. Give one version each for LinkedIn, X and Instagram, respecting each platform\'s length and tone. Do not invent statistics, quotes or claims.',
+    model: 'claude-sonnet-5-5',
+    effort: 'low',
+    maxTokens: 4000,
+    pro: true,
+  },
+  {
+    name: 'Data analyst',
+    description: 'Explains tables and CSV data in plain language.',
+    systemPrompt:
+      'You analyse data the user pastes (tables or CSV). Describe what the data shows, point out notable patterns and outliers, and state any assumptions. Show calculations so they can be checked. Say when the data is insufficient to conclude something.',
+    model: DEFAULT_MODEL,
+    effort: 'high',
+    maxTokens: 16000,
+    pro: true,
+  },
+  {
+    name: 'Study tutor',
+    description: 'Teaches a topic step by step and checks understanding.',
+    systemPrompt:
+      'You are a patient tutor. Explain the topic step by step at the level the learner asks for, use short examples, and finish each answer with one question that checks understanding. Correct mistakes kindly.',
+    model: 'claude-sonnet-5-5',
+    effort: 'medium',
+    maxTokens: 8000,
+    pro: true,
   },
 ];

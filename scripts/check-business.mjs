@@ -11,7 +11,7 @@ const problems = [];
 const config = JSON.parse(readFileSync(join(root, 'business.config.json'), 'utf8'));
 (function walk(obj, path) {
   for (const [k, v] of Object.entries(obj)) {
-    if (k === '$comment') continue;
+    if (k.startsWith('$')) continue;
     if (v && typeof v === 'object') walk(v, `${path}${k}.`);
     else if (typeof v === 'string' && /\[[^\]]+\]/.test(v)) problems.push(`business.config.json → ${path}${k}: ${v}`);
   }

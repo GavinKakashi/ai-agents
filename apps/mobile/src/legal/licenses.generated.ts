@@ -311,6 +311,11 @@ export const LICENSES: { name: string; version: string; license: string }[] = [
   "license": "MIT"
  },
  {
+  "name": "expo-iap",
+  "version": "6.0.0",
+  "license": "MIT"
+ },
+ {
   "name": "expo-linking",
   "version": "57.0.12",
   "license": "MIT"

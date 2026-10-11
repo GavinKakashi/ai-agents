@@ -17,13 +17,14 @@
 | `legal/` | Policies in Markdown with `{{placeholders}}`: the single source for the app and the website |
 | `business.config.json` | All business details: company, address, emails, price wording, policy version |
 | `scripts/` | Legal/website build, contrast checker, licence collector, placeholder checker, tests |
-| `docs/` | Compliance checklist, app-store notes, rebranding guide, source-code licence template |
+| `docs/` | Compliance checklist, subscriptions setup, app-store notes, rebranding guide, source-code licence template, ownership-transfer pack |
 
 ## Features
 
 - **Agents:** create from templates or from scratch; name, instructions, model (Claude Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1), effort and reply length; pause, resume, duplicate, delete.
 - **Conversations:** chat with any agent, retry failed messages, delete. History is replayed to the API unchanged (append-only), and safety-refusal fallback is enabled on models that support it.
 - **Usage:** token counts and an estimated cost per reply, plus totals on the home screen.
+- **Crewdeck Pro subscription:** monthly and yearly plans through the App Store and Google Play (`expo-iap`, no third-party subscription service). Free plan: 3 agents. Pro: unlimited agents and the Pro template library. Restore and manage are built in.
 - **Privacy center:** export everything as JSON, delete everything, withdraw consent, make a privacy request.
 - **Accessibility:** screen-reader labels, roles and states throughout; ≥ 44 pt targets; system text scaling; WCAG AA contrast enforced by a script; keyboard support on the web.
 - **Light and dark** themes, plus a manual override.
@@ -55,7 +56,12 @@ cd apps/mobile && npm install && npx expo start
 | `npm run notices` | Rebuilds `THIRD_PARTY_NOTICES.md` and the in-app licence list; fails on unreviewed licences |
 | `npm test` | Server, Markdown and contrast tests |
 | `npm run check` | Contrast + tests + mobile typecheck + lint |
+| `npm run transfer -- <new-owner.json>` | Rebrands every policy, page and `LICENSE` to a new owner after a sale |
 | `npm run admin -- <cmd>` | Privacy-request and mailing-list operations (see `apps/server/admin.mjs`) |
+
+## Selling the business
+
+Everything for a sale is in **[docs/ownership-transfer/](docs/ownership-transfer/README.md)**: asset inventory, purchase agreement, IP assignment, Apple and Google app transfer steps, subscriber continuity, customer notices and the closing checklist.
 
 ## Before launch
 

@@ -7,6 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Colors } from '@/constants/theme';
 import { useResolvedScheme } from '@/hooks/use-theme';
 import { AppProvider, useApp } from '@/state/app-store';
+import { SubscriptionProvider } from '@/state/subscription';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -56,6 +57,7 @@ function RootNavigator() {
         <Stack.Screen name="settings/about" options={{ title: 'About & business details' }} />
         <Stack.Screen name="settings/licenses" options={{ title: 'Open-source licences' }} />
         <Stack.Screen name="legal/[slug]" options={{ title: '' }} />
+        <Stack.Screen name="subscribe" options={{ title: 'Subscription', presentation: 'modal' }} />
       </Stack>
     </ThemeProvider>
   );
@@ -65,7 +67,9 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <AppProvider>
-        <RootNavigator />
+        <SubscriptionProvider>
+          <RootNavigator />
+        </SubscriptionProvider>
       </AppProvider>
     </SafeAreaProvider>
   );

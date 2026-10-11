@@ -20,10 +20,17 @@ export const BUSINESS = {
   "hostingProvider": "Replit, Inc. (website and privacy-request service hosting)",
   "emailProvider": "[YOUR EMAIL DELIVERY PROVIDER, e.g. your SMTP host]",
   "pricing": {
-    "appPrice": "Free",
-    "summary": "Crewdeck is free to download and use. There are no subscriptions, in-app purchases, ads, or hidden fees. You pay your AI provider (Anthropic) directly for API usage, at the rates they publish."
+    "appPrice": "Free, with an optional Crewdeck Pro subscription",
+    "summary": "Crewdeck is free to download and use with up to 3 agents. Crewdeck Pro is an optional auto-renewing subscription that unlocks unlimited agents and the Pro template library. There are no ads and no hidden fees. Separately, you pay your AI provider (Anthropic) directly for API usage, at the rates they publish.",
+    "proName": "Crewdeck Pro",
+    "referencePrices": "US$4.99 per month or US$39.99 per year (prices in other countries are set by the App Store and Google Play and shown in the app before you buy)",
+    "freeAgentLimit": 3,
+    "productIds": {
+      "monthly": "[com.yourcompany.crewdeck].pro.monthly",
+      "yearly": "[com.yourcompany.crewdeck].pro.yearly"
+    }
   },
-  "policyVersion": "1.0.0",
+  "policyVersion": "1.1.0",
   "effectiveDate": "2026-10-11",
   "minimumAge": 18,
   "copyrightYear": "2026"
@@ -87,7 +94,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
     "blocks": [
       {
         "type": "paragraph",
-        "text": "**Effective date:** 2026-10-11 · **Version:** 1.0.0"
+        "text": "**Effective date:** 2026-10-11 · **Version:** 1.1.0"
       },
       {
         "type": "paragraph",
@@ -168,7 +175,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
     "blocks": [
       {
         "type": "paragraph",
-        "text": "**Effective date:** 2026-10-11 · **Version:** 1.0.0"
+        "text": "**Effective date:** 2026-10-11 · **Version:** 1.1.0"
       },
       {
         "type": "paragraph",
@@ -249,6 +256,12 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
             "Your device only",
             "You",
             "To remember your choices"
+          ],
+          [
+            "Subscription status (whether Crewdeck Pro is active, and when it was last checked)",
+            "Your device only",
+            "You",
+            "To unlock Pro features, including briefly while you are offline"
           ]
         ]
       },
@@ -264,6 +277,15 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
       {
         "type": "paragraph",
         "text": "When you run an agent, the app sends the agent's instructions, the conversation, and your API key to Anthropic's API (`api.anthropic.com`) over an encrypted connection. Anthropic processes this data under **your own agreement with Anthropic**, including their privacy policy and usage policies. We are not a party to that processing. Please do not include sensitive personal data about other people in your messages unless you have a lawful basis to do so."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Subscriptions and payments"
+      },
+      {
+        "type": "paragraph",
+        "text": "If you subscribe to Crewdeck Pro, the purchase is made with Apple (App Store) or Google (Google Play) under their terms and privacy policies. They process your payment details; we never receive them. The app asks the store on your device whether your subscription is active. We receive only the sales reports Apple and Google provide to all developers, which do not identify you by name or email."
       },
       {
         "type": "heading",
@@ -338,6 +360,15 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
           "Hosting: Replit, Inc. (website and privacy-request service hosting)",
           "Email delivery: [YOUR EMAIL DELIVERY PROVIDER, e.g. your SMTP host]"
         ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Business transfers"
+      },
+      {
+        "type": "paragraph",
+        "text": "If Crewdeck, or the company that runs it, is sold, merged or reorganised, the limited personal data we hold (product-update subscriptions and privacy-request records) may be transferred to the new owner as part of that transaction. The new owner must keep using it only as this policy describes, unless they tell you about changes and, where required, ask for your consent. We will tell you before your data is transferred and becomes subject to a different privacy policy. Data stored only on your device is not affected, because we never hold it."
       },
       {
         "type": "heading",
@@ -425,25 +456,38 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
     "blocks": [
       {
         "type": "paragraph",
-        "text": "**Effective date:** 2026-10-11 · **Version:** 1.0.0"
+        "text": "**Effective date:** 2026-10-11 · **Version:** 1.1.0"
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "The app"
+        "text": "The app and Crewdeck Pro"
       },
       {
         "type": "paragraph",
-        "text": "Crewdeck is free to download and use. There are no subscriptions, in-app purchases, ads, or hidden fees. You pay your AI provider (Anthropic) directly for API usage, at the rates they publish."
+        "text": "Crewdeck is free to download and use with up to 3 agents. Crewdeck Pro is an optional auto-renewing subscription that unlocks unlimited agents and the Pro template library. There are no ads and no hidden fees. Separately, you pay your AI provider (Anthropic) directly for API usage, at the rates they publish."
       },
       {
         "type": "paragraph",
-        "text": "Because the app is currently free, there is nothing to refund. If we ever introduce a paid feature, this policy will apply to it, and the price will always be shown clearly before you buy."
+        "text": "Crewdeck Pro is sold only through the Apple App Store and Google Play, so Apple and Google take the payment and decide refunds under their own policies. We cannot issue refunds for store purchases ourselves, and we never charge a fee for a refund."
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "Purchases made through the App Store or Google Play"
+        "text": "Cancelling a subscription"
+      },
+      {
+        "type": "paragraph",
+        "text": "You can cancel at any time in your App Store or Google Play account settings, or from **Settings → Crewdeck Pro → Manage subscription** in the app. Cancelling stops the next renewal; you keep Pro until the end of the period already paid for. Cancelling does not by itself refund the current period; to ask for a refund, use the store links below."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you are a consumer in the UK or EU, you may have a legal right to cancel a new subscription within 14 days. Apple and Google handle these requests through the links below."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Requesting a refund for a store purchase"
       },
       {
         "type": "paragraph",
@@ -499,7 +543,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
     "blocks": [
       {
         "type": "paragraph",
-        "text": "**Effective date:** 2026-10-11 · **Version:** 1.0.0"
+        "text": "**Effective date:** 2026-10-11 · **Version:** 1.1.0"
       },
       {
         "type": "paragraph",
@@ -530,15 +574,31 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
       {
         "type": "heading",
         "level": 2,
-        "text": "3. Price and fees"
+        "text": "3. Price, subscriptions and fees"
       },
       {
         "type": "paragraph",
-        "text": "Crewdeck is free to download and use. There are no subscriptions, in-app purchases, ads, or hidden fees. You pay your AI provider (Anthropic) directly for API usage, at the rates they publish."
+        "text": "Crewdeck is free to download and use with up to 3 agents. Crewdeck Pro is an optional auto-renewing subscription that unlocks unlimited agents and the Pro template library. There are no ads and no hidden fees. Separately, you pay your AI provider (Anthropic) directly for API usage, at the rates they publish."
       },
       {
         "type": "paragraph",
-        "text": "We will never charge you without telling you the price clearly first and getting your explicit agreement. If we introduce a paid feature, it will be optional, its price will be shown before purchase, and existing free features will not be removed without reasonable notice."
+        "text": "**Crewdeck Pro subscription.** Crewdeck Pro is an optional, auto-renewing subscription sold through the Apple App Store and Google Play. The current reference prices are US$4.99 per month or US$39.99 per year (prices in other countries are set by the App Store and Google Play and shown in the app before you buy)."
+      },
+      {
+        "type": "list",
+        "items": [
+          "**Before you buy:** the app shows the price, the billing period and what the subscription includes. We never charge you without your explicit confirmation in the store's purchase sheet.",
+          "**Payment:** Apple or Google charges your store account when you confirm, and processes all payments. We never see your card details.",
+          "**Automatic renewal:** the subscription renews automatically for the same period, at the price then in effect, unless you cancel at least 24 hours before the end of the current period. Apple or Google will notify you of any price increase as their rules require, and where required will ask for your consent.",
+          "**Cancelling:** you can cancel at any time in your App Store or Google Play account settings, or from **Settings → Crewdeck Pro → Manage subscription** in the app. Cancelling stops future renewals; you keep Pro until the end of the period you have paid for. There is no cancellation fee.",
+          "**Free plan:** if your subscription ends, you return to the free plan. Agents you created stay on your device and keep working; you won't be able to add agents beyond the free limit until you subscribe again.",
+          "**Restoring:** use **Restore purchases** to re-activate a subscription on a new device signed in to the same store account.",
+          "**Refunds** are covered by our Refund Policy."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "There are no other fees from us. AI usage is billed separately by Anthropic to your own Anthropic account and is not included in the subscription."
       },
       {
         "type": "heading",
@@ -646,12 +706,21 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
       },
       {
         "type": "paragraph",
-        "text": "You can stop using the app at any time by uninstalling it. We may suspend or end your licence if you seriously or repeatedly break these terms. Sections 5, 7, 10, 11 and 14 continue after these terms end."
+        "text": "You can stop using the app at any time by uninstalling it. We may suspend or end your licence if you seriously or repeatedly break these terms. Sections 5, 7, 10, 11 and 15 continue after these terms end."
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "13. Changes to these terms"
+        "text": "13. Transfer of the service"
+      },
+      {
+        "type": "paragraph",
+        "text": "We may transfer our rights and obligations under these terms to another organisation, for example if we sell the Crewdeck business. If we do, we will tell you, and your rights under these terms and any active subscription will not be reduced as a result. If you are unhappy with the transfer you can cancel your subscription and stop using the app."
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "14. Changes to these terms"
       },
       {
         "type": "paragraph",
@@ -660,7 +729,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
       {
         "type": "heading",
         "level": 2,
-        "text": "14. Law and disputes"
+        "text": "15. Law and disputes"
       },
       {
         "type": "paragraph",
@@ -669,7 +738,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
       {
         "type": "heading",
         "level": 2,
-        "text": "15. Contact"
+        "text": "16. Contact"
       },
       {
         "type": "paragraph",
@@ -699,7 +768,8 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
           "**Analytics, advertising, attribution or tracking SDKs:** none.",
           "**Crash reporting or session recording SDKs:** none.",
           "**Social login or social sharing SDKs:** none.",
-          "**Network connections made by the app:** only to `api.anthropic.com`, and only when you verify your API key or run an agent."
+          "**Payments:** handled by Apple (App Store) and Google (Google Play) through `expo-iap`. No third-party payment or subscription-analytics service is used.",
+          "**Network connections made by the app:** to `api.anthropic.com` when you verify your API key or run an agent, and to the App Store or Google Play through the operating system to check or buy a subscription."
         ]
       },
       {
@@ -727,6 +797,12 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
             "App framework, navigation, app version, opening links, splash screen",
             "No",
             "None at runtime"
+          ],
+          [
+            "expo-iap (open source, MIT)",
+            "Shows subscription prices and lets you buy, restore and manage Crewdeck Pro through StoreKit (Apple) and Play Billing (Google)",
+            "No; the purchase is handled by Apple or Google",
+            "App Store / Google Play, through the operating system"
           ],
           [
             "expo-secure-store (Expo)",

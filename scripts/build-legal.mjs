@@ -12,7 +12,7 @@ import { parseBlocks, blocksToHtml, parseFrontmatter, fillTemplate } from './lib
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(readFileSync(join(root, 'business.config.json'), 'utf8'));
-delete config.$comment;
+for (const k of Object.keys(config)) if (k.startsWith("$")) delete config[k];
 config.copyrightYear = config.effectiveDate.slice(0, 4);
 
 // ---- Legal documents ------------------------------------------------------

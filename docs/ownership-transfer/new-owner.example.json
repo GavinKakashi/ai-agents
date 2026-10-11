@@ -1,0 +1,17 @@
+{
+  "$comment": "The buyer fills this in after closing, then runs: npm run transfer -- docs/ownership-transfer/new-owner.json. Only these fields can be changed this way. App IDs and subscription product IDs are deliberately not here; they must stay the same so existing subscribers keep Pro.",
+  "legalEntityName": "Buyer Company Ltd",
+  "entityType": "private limited company",
+  "registeredAddress": "1 Example Street, Example City, EX1 2MP, United Kingdom",
+  "companyNumber": "12345678",
+  "taxId": "GB123456789",
+  "supportEmail": "support@buyer-domain.com",
+  "privacyEmail": "privacy@buyer-domain.com",
+  "websiteUrl": "https://buyer-domain.com",
+  "governingLaw": "the laws of England and Wales",
+  "jurisdictionCourts": "the courts of England and Wales",
+  "euRepresentative": "Not appointed",
+  "ukRepresentative": "Not applicable",
+  "hostingProvider": "Replit, Inc. (website and privacy-request service hosting)",
+  "emailProvider": "Example Mail Ltd"
+}

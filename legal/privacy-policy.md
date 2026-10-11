@@ -34,12 +34,17 @@ This policy explains what personal data {{appName}} ("we", "us") handles, why, a
 | Your Anthropic API key | Device secure storage (web: memory only) | You | To call the Anthropic API on your behalf |
 | Consent record (which policy versions you accepted, and when) | Your device only | You | To show what you agreed to |
 | App preferences (e.g. light or dark theme) | Your device only | You | To remember your choices |
+| Subscription status (whether {{pricing.proName}} is active, and when it was last checked) | Your device only | You | To unlock Pro features, including briefly while you are offline |
 
 We never receive any of this data. Because it is stored only on your device, uninstalling the app or using **Settings → Privacy center → Delete all data** removes it permanently. We cannot recover it for you.
 
 ### Messages you send to AI agents
 
 When you run an agent, the app sends the agent's instructions, the conversation, and your API key to Anthropic's API (`api.anthropic.com`) over an encrypted connection. Anthropic processes this data under **your own agreement with Anthropic**, including their privacy policy and usage policies. We are not a party to that processing. Please do not include sensitive personal data about other people in your messages unless you have a lawful basis to do so.
+
+### Subscriptions and payments
+
+If you subscribe to {{pricing.proName}}, the purchase is made with Apple (App Store) or Google (Google Play) under their terms and privacy policies. They process your payment details; we never receive them. The app asks the store on your device whether your subscription is active. We receive only the sales reports Apple and Google provide to all developers, which do not identify you by name or email.
 
 ### What the app does not do
 
@@ -68,6 +73,10 @@ We use the following providers to run the website and privacy-request service. T
 
 - Hosting: {{hostingProvider}}
 - Email delivery: {{emailProvider}}
+
+## Business transfers
+
+If {{appName}}, or the company that runs it, is sold, merged or reorganised, the limited personal data we hold (product-update subscriptions and privacy-request records) may be transferred to the new owner as part of that transaction. The new owner must keep using it only as this policy describes, unless they tell you about changes and, where required, ask for your consent. We will tell you before your data is transferred and becomes subject to a different privacy policy. Data stored only on your device is not affected, because we never hold it.
 
 ## International transfers
 
