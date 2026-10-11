@@ -1,0 +1,21 @@
+# Replit configuration. Import this repository into Replit
+# ("Create Repl" → "Import from GitHub") and press Run.
+#   Run      → builds the legal pages and starts the website + privacy-request service
+#   Deploy   → same command; data is stored in Replit Database (REPLIT_DB_URL)
+# To preview the mobile app from Replit, open the Shell and run:
+#   cd apps/mobile && npm install && npx expo start --tunnel
+# then scan the QR code with Expo Go on your phone.
+modules = ["nodejs-22"]
+run = "npm start"
+entrypoint = "apps/server/index.mjs"
+
+[env]
+EXPO_NO_TELEMETRY = "1"
+
+[deployment]
+run = ["sh", "-c", "npm start"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 3000
+externalPort = 80

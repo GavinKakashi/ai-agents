@@ -1,0 +1,46 @@
+---
+title: Privacy request
+description: Ask to access, correct, delete or export the personal data we hold about you.
+---
+<article class="prose">
+  <h1>Make a privacy request</h1>
+  <p>Use this form to exercise your data protection rights, such as access, correction, deletion, portability, restriction, objection, or withdrawal of consent. We'll reply within one month (45 days for California residents).</p>
+  <p><strong>Your data in the app is not held by us.</strong> Agents, conversations and settings are stored only on your device. To export or delete them, open the app and go to <strong>Settings → Privacy center</strong>.</p>
+  <p>This form covers what we do hold: product-update subscriptions and earlier privacy requests. We only use the details you enter here to handle your request. You can also email <a href="mailto:{{privacyEmail}}">{{privacyEmail}}</a>.</p>
+</article>
+
+<form class="stack" data-api-form="/api/privacy-request" novalidate>
+  <div class="field">
+    <label for="pr-email">Email address</label>
+    <p class="hint" id="pr-email-hint">We'll reply to this address and may ask you to confirm it's yours.</p>
+    <input id="pr-email" name="email" type="email" autocomplete="email" required aria-describedby="pr-email-hint">
+  </div>
+  <div class="field">
+    <label for="pr-type">Type of request</label>
+    <select id="pr-type" name="type" required>
+      <option value="">Choose one</option>
+      <option value="access">Access — get a copy of my data</option>
+      <option value="deletion">Deletion — delete my data</option>
+      <option value="correction">Correction — fix my data</option>
+      <option value="portability">Portability — export my data</option>
+      <option value="restriction">Restriction or objection</option>
+      <option value="withdraw-consent">Withdraw consent</option>
+      <option value="other">Something else</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="pr-details">Details (optional)</label>
+    <p class="hint" id="pr-details-hint">Please don't include sensitive information. Maximum 2,000 characters.</p>
+    <textarea id="pr-details" name="details" rows="5" maxlength="2000" aria-describedby="pr-details-hint"></textarea>
+  </div>
+  <div class="hp" aria-hidden="true">
+    <label for="pr-website">Leave this field empty</label>
+    <input id="pr-website" name="website" type="text" tabindex="-1" autocomplete="off">
+  </div>
+  <label class="check">
+    <input type="checkbox" name="confirm" value="yes" required>
+    I confirm that I am the person this request is about, or I am authorised to act for them.
+  </label>
+  <button type="submit" class="btn">Send request</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

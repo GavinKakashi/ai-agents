@@ -1,0 +1,7 @@
+node_modules/
+apps/server/data/
+apps/web/public/
+.env
+.env.*
+!.env.example
+.DS_Store

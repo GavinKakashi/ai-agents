@@ -1,0 +1,23 @@
+{
+  "name": "crewdeck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Crewdeck — a local-first mobile app for managing Claude-powered AI agents, plus its website and privacy-request service.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:legal": "node scripts/build-legal.mjs",
+    "check:business": "node scripts/check-business.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "notices": "node scripts/third-party-notices.mjs",
+    "start": "node scripts/build-legal.mjs && node apps/server/index.mjs",
+    "admin": "node apps/server/admin.mjs",
+    "test": "node --test scripts/tests/*.test.mjs",
+    "mobile": "cd apps/mobile && npx expo start",
+    "check": "npm run check:contrast && npm test && cd apps/mobile && npx tsc --noEmit && npx expo lint"
+  },
+  "optionalDependencies": {
+    "nodemailer": "^7.0.0"
+  }
+}

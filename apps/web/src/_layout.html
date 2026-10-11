@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{pageTitle}} · {{appName}}</title>
+  <meta name="description" content="{{pageDescription}}">
+  <link rel="icon" href="/icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/consent.js" defer></script>
+  <script src="/forms.js" defer></script>
+</head>
+<body>
+  <!-- Cookie consent. Hidden until consent.js decides it is needed. Accept and
+       Reject have equal weight; nothing optional is enabled by default. -->
+  <section id="cookie-banner" class="cookie-banner" role="region" aria-labelledby="cookie-title" hidden>
+    <div class="wrap">
+      <h2 id="cookie-title">Your cookie choices</h2>
+      <p>We use only strictly necessary storage to remember this choice. We don't use advertising cookies. Optional categories stay off unless you turn them on. <a href="/cookies.html">Cookie Policy</a></p>
+      <form id="cookie-form">
+        <fieldset>
+          <legend class="visually-hidden">Cookie categories</legend>
+          <label class="check"><input type="checkbox" checked disabled> Strictly necessary (always on)</label>
+          <div id="cookie-optional"></div>
+        </fieldset>
+        <div class="button-row">
+          <button type="button" class="btn" data-consent="reject">Reject all</button>
+          <button type="button" class="btn" data-consent="accept">Accept all</button>
+          <button type="submit" class="btn btn-secondary">Save choices</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">
+        <img src="/icon.png" alt="" width="32" height="32">
+        <span>{{appName}}</span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="wrap">
+{{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <section aria-labelledby="footer-legal">
+        <h2 id="footer-legal">Legal</h2>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/refunds.html">Refund Policy</a></li>
+          <li><a href="/cookies.html">Cookie Policy</a></li>
+          <li><a href="/accessibility.html">Accessibility</a></li>
+          <li><a href="/privacy-request.html">Make a privacy request</a></li>
+          <li><button type="button" class="link-button" data-open-cookie-settings>Cookie settings</button></li>
+        </ul>
+      </section>
+      <section aria-labelledby="footer-business">
+        <h2 id="footer-business">Business details</h2>
+        <address>
+          {{legalEntityName}}<br>
+          {{registeredAddress}}<br>
+          Company number: {{companyNumber}}<br>
+          Tax ID: {{taxId}}<br>
+          Support: <a href="mailto:{{supportEmail}}">{{supportEmail}}</a><br>
+          Privacy: <a href="mailto:{{privacyEmail}}">{{privacyEmail}}</a>
+        </address>
+      </section>
+    </div>
+    <p class="wrap fineprint">© {{copyrightYear}} {{legalEntityName}}. Claude is a trademark of Anthropic, PBC. {{appName}} is an independent product and is not affiliated with or endorsed by Anthropic.</p>
+  </footer>
+
+</body>
+</html>

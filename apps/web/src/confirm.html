@@ -1,0 +1,13 @@
+---
+title: Confirm your subscription
+description: Confirm that you want to receive product update emails.
+---
+<article class="prose">
+  <h1>Confirm your subscription</h1>
+  <p>Press the button below to confirm that you want product update emails from {{appName}}. If you didn't ask for these, close this page and we won't email you.</p>
+</article>
+<form class="stack" data-api-form="/api/confirm" data-token-from-url novalidate>
+  <input type="hidden" name="token">
+  <button type="submit" class="btn">Confirm subscription</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>

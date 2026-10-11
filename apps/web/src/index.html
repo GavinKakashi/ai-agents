@@ -1,0 +1,69 @@
+---
+title: Manage your AI agents from your phone
+description: Crewdeck is a private, local-first mobile app for creating and running Claude-powered AI agents with your own Anthropic API key.
+---
+<section class="hero" aria-labelledby="hero-title">
+  <h1 id="hero-title">{{tagline}}</h1>
+  <p class="lead">{{appName}} lets you create AI agents, give each one its own instructions and model, and run them from your phone. Everything stays on your device, and you use your own Anthropic API key.</p>
+  <p class="note">{{appName}} is in early access. App Store and Google Play availability will be announced on this page.</p>
+</section>
+
+<section id="features" aria-labelledby="features-title">
+  <h2 id="features-title">What it does</h2>
+  <ul class="feature-grid">
+    <li>
+      <h3>Build agents</h3>
+      <p>Give each agent a name, instructions, a Claude model and an effort level. Start from a template or from scratch.</p>
+    </li>
+    <li>
+      <h3>Run and review</h3>
+      <p>Chat with any agent, keep separate conversations, and pause agents you're not using.</p>
+    </li>
+    <li>
+      <h3>See your usage</h3>
+      <p>Every reply shows its token counts and an estimated cost, based on Anthropic's published prices.</p>
+    </li>
+    <li>
+      <h3>Private by design</h3>
+      <p>No account, no analytics, no ads, no tracking. Your agents and conversations are stored only on your device.</p>
+    </li>
+    <li>
+      <h3>Your data, your control</h3>
+      <p>Export everything to a file or delete it all from the Privacy center at any time.</p>
+    </li>
+    <li>
+      <h3>Accessible</h3>
+      <p>Built for screen readers, large text, keyboard use on the web, and checked colour contrast in light and dark themes.</p>
+    </li>
+  </ul>
+</section>
+
+<section id="pricing" aria-labelledby="pricing-title">
+  <h2 id="pricing-title">Pricing</h2>
+  <div class="card">
+    <p class="price">{{pricing.appPrice}}</p>
+    <p>{{pricing.summary}}</p>
+    <p>See <a href="/refunds.html">our Refund Policy</a>.</p>
+  </div>
+</section>
+
+<section id="updates" aria-labelledby="updates-title">
+  <h2 id="updates-title">Get product updates</h2>
+  <p>Optional. We'll email you about new releases only, and every email has a one-click unsubscribe link. We'll send a confirmation email first.</p>
+  <form class="stack" data-api-form="/api/subscribe" novalidate>
+    <div class="field">
+      <label for="sub-email">Email address</label>
+      <input id="sub-email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="hp" aria-hidden="true">
+      <label for="sub-website">Leave this field empty</label>
+      <input id="sub-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <label class="check">
+      <input type="checkbox" name="consent" value="yes" required>
+      I'd like to receive product update emails from {{appName}}. I can unsubscribe at any time. See the <a href="/privacy.html">Privacy Policy</a>.
+    </label>
+    <button type="submit" class="btn">Subscribe</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
